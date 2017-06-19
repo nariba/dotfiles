@@ -1,0 +1,45 @@
+"シンタックスハイライトの有効"
+syntax enable
+
+"行番号の設定"
+set number
+
+"カーソルの位置表示"
+set ruler
+
+"タブ文字，行末など不可視文字を表示"
+set list
+
+"不可視文字の表示文字"
+set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:<
+set incsearch
+set hlsearch
+set nowrap
+set showmatch
+set whichwrap=h,l
+set nowrapscan
+set ignorecase
+set smartcase
+set hidden
+set history=2000
+set autoindent
+set expandtab
+
+"Tabに対する空白の数"
+set tabstop=4
+
+set shiftwidth=2
+
+set helplang=en
+
+colorscheme desert
+
+nnoremap <Space>w  :<C-u>w<CR>
+nnoremap <Space>q  :<C-u>q<CR>
+nnoremap <Space>Q  :<C-u>q!<CR>
+
+";と:の入れ替え"
+nnoremap ;  :
+nnoremap :  ;
+vnoremap ;  :
+vnoremap :  ;
