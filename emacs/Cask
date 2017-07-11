@@ -1,5 +1,6 @@
 (source gnu)
 (source melpa)
+(source org)
 
 (depends-on "async")
 (depends-on "auto-complete")
@@ -17,6 +18,7 @@
 (depends-on "git-commit")
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
+(depends-on "init-loader")
 (depends-on "magit")
 (depends-on "magit-popup")
 (depends-on "multiple-cursors")
