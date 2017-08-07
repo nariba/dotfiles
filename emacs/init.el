@@ -10,6 +10,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ (when window-system
+     '(ansi-color-faces-vector
+       [default default default italic underline success warning error])
+   '(custom-enabled-themes (quote (misterioso))))
  '(package-selected-packages
    (quote
     (package-utils switch-window win-switch init-loader popup async bind-key cask dash diminish epl f flycheck git-commit magit-popup package-build pkg-info s shut-up with-editor auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
