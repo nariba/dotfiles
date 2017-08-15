@@ -103,6 +103,8 @@
 (setq fill-column 80)
 (setq-default auto-fill-mode t)
 
+;;; yes or no to y or n
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (line-number-mode t)
 (which-func-mode 1)
