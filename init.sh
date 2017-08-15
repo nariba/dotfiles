@@ -20,3 +20,10 @@ if [ ! -e ${HOME}/.emacs.d/Cask ]; then
 fi
 cd ${HOME}/.emacs.d
 cask install
+
+# deploy git config files
+if [ -e ${HOME}/.gitconfig ]; then
+    mv ${HOME}/.gitconfig ${HOME}/.gitconfig_org
+fi
+ln -s ${HOME}/dotfiles/git/gitconfig ${HOME}/.gitconfig \
+    || echo "Failed to deploy git config files."
