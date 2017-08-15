@@ -3,4 +3,4 @@
 	editor = emacs
 
 [include]
-	path = ${HOME}/dotfiles/git/private/gitconfig.local
+	path = ~/dotfiles/git/private/gitconfig.local
