@@ -1,15 +1,3 @@
-;; proxy の設定
-;; ロードパスの追加
-(setq load-path (append
-                 '("~/.emacs.d/private-conf")
-                 load-path))
-
-;; proxy設定
-;; private-conf/myproxy.elがあるときだけプロキシ設定をロード
-;; 第2引数のtをつけると、ファイルが存在しなくてもエラーにならない
-(load "myproxy" t)
-
-
 ;; Caskとpackageとpalletの連携
 (package-initialize)
 (require 'cask "~/.cask/cask.el")
