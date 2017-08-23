@@ -11,6 +11,8 @@
 (require 'el-get)
 (setq el-get-dir (locate-user-emacs-file "~/.emacs.d/elisp"))
 
+(load "~/.emacs.d/el-get-packages-list.el")
+
 ;; init-loaderの起動、confディレクトリのelisp読み込み
-;; (require 'init-loader)
-;; (init-loader-load "~/.emacs.d/conf")
+(require 'init-loader)
+(init-loader-load "~/.emacs.d/conf")
