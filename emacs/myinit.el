@@ -1,10 +1,3 @@
-;; Caskとpackageとpalletの連携
-;; (package-initialize)
-;; (require 'cask "~/.cask/cask.el")
-;; (cask-initialize)
-;; (require 'pallet)
-;; (pallet-mode t)
-
 (when load-file-name (setq user-emacs-directory (file-name-directory load-file-name)))
 
 (add-to-list 'load-path (locate-user-emacs-file "el-get"))
