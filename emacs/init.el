@@ -1,10 +1,16 @@
-(load "~/.emacs.d/myinit.el")
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
+
+(when load-file-name (setq user-emacs-directory (file-name-directory load-file-name)))
+
+(load "~/.emacs.d/mypackage.el")
+
+;; init-loaderの起動、confディレクトリのelisp読み込み
+(require 'init-loader)
+(init-loader-load "~/.emacs.d/conf")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
