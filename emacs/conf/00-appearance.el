@@ -106,5 +106,12 @@
 ;;; yes or no to y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; 現在の行番号をモードラインに表示
 (line-number-mode t)
-(which-func-mode 1)
+
+;; 行番号をバッファの左に表示, 五桁分のマージンをとっておく
+(setq linum-format "%5d")
+(global-linum-mode 1)
+
+;; 現在いる関数をモードラインに表示
+(which-func-mode t)

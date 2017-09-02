@@ -1,4 +1,4 @@
-cask
-emacs/.cask
 emacs/auto-savelist
+emacs/howm
+emacs/elpa
 git/private
