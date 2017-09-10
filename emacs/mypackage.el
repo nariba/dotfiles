@@ -14,6 +14,10 @@
 ;; Packages
 (defvar my/favorite-packages
   '(
+    anything
+    redo+
+    evil
+
     async
     auto-complete
     bind-key
