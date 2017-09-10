@@ -1,3 +1,6 @@
 [submodule "emacs/el-get"]
 	path = emacs/el-get
 	url = https://github.com/dimitri/el-get
+[submodule "emacs/elisp/evil-plugins"]
+	path = emacs/elisp/evil-plugins
+	url = https://github.com/tarao/evil-plugins
