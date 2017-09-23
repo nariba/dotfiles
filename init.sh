@@ -13,3 +13,7 @@ if [ -e ${HOME}/.gitconfig ]; then
 fi
 ln -s ${HOME}/dotfiles/git/gitconfig ${HOME}/.gitconfig \
     || echo "Failed to deploy git config files."
+
+
+# deploy zsh config files
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
