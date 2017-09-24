@@ -31,7 +31,6 @@ echo "zplug \"sorin-ionescu/prezto\"" >> ${HOME}/.zshrc
 echo "zplug load --verbose" >> ${HOME}/.zshrc
 source ${HOME}/.zshrc
 zplug install
-rm ${HOME}/.zshrc
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ln -s $HOME/.zplug/repos/sorin-ionescu/prezto $HOME/.zprezto
 
