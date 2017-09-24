@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # emacs's symbolic link setting
 if [ -e ${HOME}/.emacs.d ]; then
@@ -16,5 +16,5 @@ ln -s ${HOME}/dotfiles/git/gitconfig ${HOME}/.gitconfig \
 
 
 # deploy zsh config files
-export ZPLUG_HOME=${HOME}/.zplug
-git clone https://github.com/zplug/zplug $ZPLUG_HOME
+export ZPLUG_HOME=${HOME}/dotfiles/zsh/zplug
+source ${ZPLUG_HOME}/init.zsh
