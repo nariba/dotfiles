@@ -18,3 +18,14 @@ ln -s ${HOME}/dotfiles/git/gitconfig ${HOME}/.gitconfig \
 # deploy zsh config files
 export ZPLUG_HOME=${HOME}/dotfiles/zsh/zplug
 source ${ZPLUG_HOME}/init.zsh
+
+if [ -e ${HOME}/.zplug ]; then
+    mv ${HOME}/.zplug ${HOME}/.zplug_org
+fi
+ln -s ${HOME}/dotfiles/zsh/zplug ${HOME}/.zplug \
+    || echo "Failed to deploy zplug."
+
+echo "source ~/.zplug/init.zsh" >> ${HOME}/.zshrc
+echo "zplug \"sorin-ionescu/prezto\"" >> ${HOME}/.zshrc
+echo "zplug load --verbose" >> ${HOME}/.zshrc
+source ${HOME}/.zshrc
