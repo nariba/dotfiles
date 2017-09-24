@@ -25,7 +25,16 @@ fi
 ln -s ${HOME}/dotfiles/zsh/zplug ${HOME}/.zplug \
     || echo "Failed to deploy zplug."
 
+## deploy the prezto files
 echo "source ~/.zplug/init.zsh" >> ${HOME}/.zshrc
 echo "zplug \"sorin-ionescu/prezto\"" >> ${HOME}/.zshrc
 echo "zplug load --verbose" >> ${HOME}/.zshrc
 source ${HOME}/.zshrc
+zplug install
+rm ${HOME}/.zshrc
+ln -s $HOME/.zplug/repos/sorin-ionescu/prezto $HOME/.zprezto
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
