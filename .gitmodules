@@ -1,3 +1,6 @@
 [submodule "emacs/el-get"]
 	path = emacs/el-get
 	url = https://github.com/dimitri/el-get
+[submodule "zsh/zplug"]
+	path = zsh/zplug
+	url = https://github.com/zplug/zplug.git
