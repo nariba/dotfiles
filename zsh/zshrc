@@ -1,26 +1,19 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+#!/usr/bin/zsh
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-
-
 # To use zplug
-source ~/.zplug/init.zsh
+source ${HOME}/.zplug/init.zsh
 
-# (1) プラグインを定義する
+# プラグインを定義
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'sorin-ionescu/prezto'
 
-# (2) インストールする
+# インストール
 if ! zplug check --verbose; then
   printf 'Install? [y/N]: '
   if read -q; then
@@ -171,9 +164,6 @@ bindkey "\e[Z" reverse-menu-complete
 ## Command history configuration
 #
 HISTFILE=${HOME}/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
-setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
 
