@@ -16,4 +16,5 @@ ln -s ${HOME}/dotfiles/git/gitconfig ${HOME}/.gitconfig \
 
 
 # deploy zsh config files
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+export ZPLUG_HOME=${HOME}/.zplug
+git clone https://github.com/zplug/zplug $ZPLUG_HOME
