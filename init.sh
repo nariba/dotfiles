@@ -29,12 +29,6 @@ ln -s ${HOME}/dotfiles/zsh/zplug ${HOME}/.zplug \
     || echo "Failed to deploy zplug."
 
 ## deploy the prezto files
-echo "source ~/.zplug/init.zsh" >> ${HOME}/.zshrc
-echo "zplug \"sorin-ionescu/prezto\"" >> ${HOME}/.zshrc
-echo "zplug load" >> ${HOME}/.zshrc
-source ${HOME}/.zshrc
-zplug install
-rm ${HOME}/.zshrc
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ln -s $HOME/.zplug/repos/sorin-ionescu/prezto $HOME/.zprezto
 
