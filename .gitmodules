@@ -4,3 +4,6 @@
 [submodule "emacs/elisp/evil-plugins"]
 	path = emacs/elisp/evil-plugins
 	url = https://github.com/tarao/evil-plugins
+[submodule "zsh/zplug"]
+	path = zsh/zplug
+	url = https://github.com/zplug/zplug.git
