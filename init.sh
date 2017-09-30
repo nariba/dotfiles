@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+git submodule init
+git submodule update
+
 # emacs's symbolic link setting
 if [ -e ${HOME}/.emacs.d ]; then
     mv ${HOME}/.emacs.d ${HOME}/.emacs.d_org && ln -s ${HOME}/dotfiles/emacs ${HOME}/.emacs.d || echo "Failed to make .emacs.d symbolic link."
@@ -26,12 +29,6 @@ ln -s ${HOME}/dotfiles/zsh/zplug ${HOME}/.zplug \
     || echo "Failed to deploy zplug."
 
 ## deploy the prezto files
-echo "source ~/.zplug/init.zsh" >> ${HOME}/.zshrc
-echo "zplug \"sorin-ionescu/prezto\"" >> ${HOME}/.zshrc
-echo "zplug load" >> ${HOME}/.zshrc
-source ${HOME}/.zshrc
-zplug install
-rm ${HOME}/.zshrc
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ln -s $HOME/.zplug/repos/sorin-ionescu/prezto $HOME/.zprezto
 
