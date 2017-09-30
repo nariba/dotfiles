@@ -43,3 +43,6 @@ if [ -e ${HOME}/.zshrc ]; then
 fi
 ln -s ${HOME}/dotfiles/zsh/zshrc ${HOME}/.zshrc \
     || echo "Failed to deploy zshrc."
+
+# deploy linuxbrew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
