@@ -259,6 +259,11 @@ xterm|xterm-color|kterm|kterm-color)
     ;;
 esac
 
+# Linuxbrew
+PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+
 
 ## load user .zshrc configuration file
 #
