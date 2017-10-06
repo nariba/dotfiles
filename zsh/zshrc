@@ -11,6 +11,7 @@ source ${HOME}/.zplug/init.zsh
 # プラグインを定義
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/completions'
 zplug 'sorin-ionescu/prezto'
 
 # インストール
@@ -259,6 +260,20 @@ xterm|xterm-color|kterm|kterm-color)
     ;;
 esac
 
+# Linuxbrew
+PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+
+# Emacs alias
+alias e="emacsclient -nw -a ''"
+alias emacs="emacsclient -nw -a ''"
+
+# To avoid perl's error message
+export LC_ALL=en_US.UTF-8
+
+# Term color setting
+export TERM=screen-256color
 
 ## load user .zshrc configuration file
 #
