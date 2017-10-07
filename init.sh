@@ -45,5 +45,9 @@ ln -s ${HOME}/dotfiles/zsh/zshrc ${HOME}/.zshrc \
 
 # deploy linuxbrew
 cd ${HOME}
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)" \
-     || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+if [ -e ${HOME}/.linuxbrew ]; then
+
+else
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)" \
+        || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+fi
