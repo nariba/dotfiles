@@ -55,3 +55,6 @@
   ;; (set-face-attribute 'magit-item-highlight nil :inherit nil)
   )
 (add-hook 'magit-mode-hook 'magit-setup-diff)
+
+;; Use spaces instead tabs
+(setq-default tab-width 4 indent-tabs-mode nil)
