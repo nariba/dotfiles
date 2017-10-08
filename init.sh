@@ -37,9 +37,15 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-rm ${HOME}/.zshrc
 if [ -e ${HOME}/.zshrc ]; then
     mv ${HOME}/.zshrc ${HOME}/.zshrc_org
 fi
 ln -s ${HOME}/dotfiles/zsh/zshrc ${HOME}/.zshrc \
     || echo "Failed to deploy zshrc."
+
+# deploy linuxbrew
+cd ${HOME}
+if [ ! -e ${HOME}/.linuxbrew ]; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)" \
+        || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+fi

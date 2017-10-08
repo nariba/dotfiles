@@ -14,12 +14,17 @@
 ;; Packages
 (defvar my/favorite-packages
   '(
+    anything
+    redo+
+    evil
+
     async
     auto-complete
     bind-key
     buffer-move
     cask
     dash
+    dockerfile-mode
     diminish
     drag-stuff
     elscreen
