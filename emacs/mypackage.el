@@ -24,6 +24,7 @@
     buffer-move
     cask
     dash
+    dockerfile-mode
     diminish
     drag-stuff
     elscreen
