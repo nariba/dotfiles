@@ -4,7 +4,7 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/evil-plugins")
 (require 'mode-line-color)
 (require 'evil-mode-line)
-(evil-mode 1)
+(evil-mode 0)
 
 ;; (defun evil-escape-or-quit (&optional prompt)
 ;;   (interactive)
