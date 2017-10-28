@@ -34,6 +34,7 @@
     f
     flycheck
     flycheck-cask
+    gtags
     git-commit
     git-gutter
     helm
