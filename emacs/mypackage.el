@@ -22,7 +22,6 @@
     auto-complete
     bind-key
     buffer-move
-    cask
     dash
     dockerfile-mode
     diminish
