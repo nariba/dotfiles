@@ -15,9 +15,6 @@
 (defvar my/favorite-packages
   '(
     anything
-    redo+
-    evil
-
     async
     auto-complete
     bind-key
@@ -55,6 +52,7 @@
     pos-tip
     prodigy
     projectile
+    redo+
     s
     shut-up
     smartparens
