@@ -58,6 +58,7 @@
     smartparens
     smex
     switch-window
+    undohist
     use-package
     web-mode
     win-switch
