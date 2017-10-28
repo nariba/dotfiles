@@ -47,6 +47,7 @@
     package-build
     package-utils
     pkg-info
+    point-undo
     popup
     popwin
     pos-tip
