@@ -60,20 +60,25 @@
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 
-;; GLOBAL settings
-(setq gtags-prefix-key "\C-c")
-(require 'gtags)
+;; GLOBAL settings (helm)
+(require 'helm-gtags)
+;; 保存時に自動でgtagsのアップデート
+(custom-set-variables
+ '(helm-gtags-suggested-key-mapping t)
+ '(helm-gtags-auto-update t))
+
 ;; キーバインド
-(setq gtags-mode-hook
+(setq helm-gtags-mode-hook
       '(lambda ()
-         (define-key gtags-mode-map "\C-cs" 'gtags-find-symbol)
-         (define-key gtags-mode-map "\C-cr" 'gtags-find-rtag)
-         (define-key gtags-mode-map "\C-ct" 'gtags-find-tag)
-         (define-key gtags-mode-map "\C-cf" 'gtags-parse-file)))
+         (define-key helm-gtags-mode-map "\C-ct" 'helm-gtags-find-tag)
+         (define-key helm-gtags-mode-map "\C-cr" 'helm-gtags-find-rtag)
+         (define-key helm-gtags-mode-map "\C-cs" 'helm-gtags-find-symbol)
+         (define-key helm-gtags-mode-map "\C-cf" 'helm-gtags-parse-file)
+         (define-key helm-gtags-mode-map "\C-c <" 'helm-gtags-previous-history)
+         (define-key helm-gtags-mode-map "\C-c >" 'helm-gtags-next-history)
+         (define-key helm-gtags-mode-map "\M-," 'helm-gtags-pop-stack)))
+
 ;; gtags-mode を使いたい mode の hook に追加する
 (add-hook 'c-mode-common-hook
           '(lambda()
-             (gtags-mode 1)))
-
-(setq gtags-suggested-key-mapping t)
-(setq gtags-auto-update t))
+             (helm-gtags-mode 1)))

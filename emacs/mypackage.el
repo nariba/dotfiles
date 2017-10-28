@@ -34,12 +34,12 @@
     f
     flycheck
     flycheck-cask
-    gtags
     git-commit
     git-gutter
     helm
     helm-c-moccur
     helm-descbinds
+    helm-gtags
     howm
     htmlize
     idle-highlight-mode
