@@ -37,6 +37,8 @@
     git-commit
     git-gutter
     helm
+    helm-c-moccur
+    helm-descbinds
     howm
     htmlize
     idle-highlight-mode
