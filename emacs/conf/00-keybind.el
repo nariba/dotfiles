@@ -2,7 +2,7 @@
 (global-set-key (kbd "C-m") 'newline-and-indent)
 
 ;; C-h をdelに変更 M-?をヘルプコマンドに
-(define-key global-map (kbd "C-h") 'delete-backward-char)
+(define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
 (define-key global-map (kbd "M-?") 'help)
 
 ;; 折り返しトグルコマンド
@@ -49,8 +49,8 @@ unless given a prefix argument."
 
 ;; win-switch-mode の設定
 (require 'win-switch)
-;;; 0.75秒間受け付けるタイマー
-(setq win-switch-idle-time 0.75)
+;;; 1.50秒間受け付けるタイマー
+(setq win-switch-idle-time 1.50)
 ;;; 好きなキーを複数割り当てられる
 ;; ウィンドウ切り替え
 (win-switch-set-keys '("k") 'up)
