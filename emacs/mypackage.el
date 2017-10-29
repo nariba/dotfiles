@@ -61,6 +61,7 @@
     smex
     switch-window
     undohist
+    undo-tree
     use-package
     web-mode
     win-switch
