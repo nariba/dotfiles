@@ -72,3 +72,9 @@
 
 ;; 現在いる関数をモードラインに表示
 (which-func-mode t)
+
+;; 更新されたファイルを自動的に読み込み直す
+(global-auto-revert-mode t)
+
+;; theme
+(load-theme 'monokai t)

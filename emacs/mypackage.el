@@ -15,14 +15,10 @@
 (defvar my/favorite-packages
   '(
     anything
-    redo+
-    evil
-
     async
     auto-complete
     bind-key
     buffer-move
-    cask
     dash
     dockerfile-mode
     diminish
@@ -39,27 +35,32 @@
     helm
     helm-c-moccur
     helm-descbinds
+    helm-gtags
     howm
     htmlize
     idle-highlight-mode
     init-loader
     magit
     magit-popup
+    monokai-theme
     multiple-cursors
     nyan-mode
     package-build
     package-utils
     pkg-info
+    point-undo
     popup
     popwin
     pos-tip
     prodigy
     projectile
+    redo+
     s
     shut-up
     smartparens
     smex
     switch-window
+    undohist
     use-package
     web-mode
     win-switch
