@@ -11,4 +11,6 @@
   ;; 補完メニューをC-p C-nで操作できるようにする(通常はTABで上や下に移動する)
   (setq ac-use-menu-map t)
   ;; あいまい検索
-  (setq ac-use-fuzzy t))
+  (setq ac-use-fuzzy t)
+  (setq ac-use-menu-map t)
+  (setq ac-ignore-case nil))
