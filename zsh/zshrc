@@ -271,6 +271,7 @@ MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 # Emacs alias
 alias e="emacsclient -nw -a ''"
 alias emacs="emacsclient -nw -a ''"
+alias ekill="emacsclient -e '(kill-emacs)'"
 
 # To avoid perl's error message
 export LC_ALL=en_US.UTF-8
