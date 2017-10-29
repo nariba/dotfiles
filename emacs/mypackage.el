@@ -29,6 +29,7 @@
     expand-region
     f
     flycheck
+    flycheck-pos-tip
     flycheck-cask
     git-commit
     git-gutter
@@ -54,6 +55,7 @@
     pos-tip
     prodigy
     projectile
+    quickrun
     redo+
     s
     shut-up

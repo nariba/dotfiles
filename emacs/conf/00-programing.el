@@ -60,6 +60,37 @@
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 
+;; ファイルが #! から始まる場合、+xを付けて保存する
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
+
+;; C、C++、JAVA、PHPなどのインデント
+(add-hook 'c-mode-common-hook
+          '(lambda ()
+             (c-set-style "bsd")))
+
+
+;; python mode
+(setq python-check-command "flake8")
+
+
+;;; Flycheckの利用
+(package-install 'flycheck)
+
+;; 文法チェックを実行する
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;;; 機能を追加する
+(require 'flycheck-pos-tip)
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
+
+
+;; quickrun によるコード実行
+(require 'quickrun)
+
+
 ;; GLOBAL settings (helm)
 (require 'helm-gtags)
 ;; 保存時に自動でgtagsのアップデート

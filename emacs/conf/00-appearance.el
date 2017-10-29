@@ -74,6 +74,8 @@
 (which-func-mode t)
 
 ;; 更新されたファイルを自動的に読み込み直す
+(custom-set-variables
+ '(auto-revert-check-vc-info t))
 (global-auto-revert-mode t)
 
 ;; theme
