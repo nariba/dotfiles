@@ -42,6 +42,7 @@
     init-loader
     magit
     magit-popup
+    monokai-theme
     multiple-cursors
     nyan-mode
     package-build
