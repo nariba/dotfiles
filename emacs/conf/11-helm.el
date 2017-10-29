@@ -22,5 +22,5 @@
    helm-c-moccur-enable-auto-look-flag t
    ;; 起動時にポイントの位置の単語を初期パターンにする
    helm-c-moccur-enable-initial-pattern t)
-  ;; C-M-oにhelm-c-moccur-occur-by-moccurを割り当てる
-  (global-set-key (kbd "C-M-o") 'helm-c-moccur-occur-by-moccur))
+  ;; M-sにhelm-c-moccur-occur-by-moccurを割り当てる
+  (global-set-key (kbd "M-s") 'helm-c-moccur-occur-by-moccur))

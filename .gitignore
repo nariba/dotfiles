@@ -2,3 +2,5 @@ emacs/auto-savelist
 emacs/howm
 emacs/elpa
 git/private
+emacs/backup
+.gitkeep
