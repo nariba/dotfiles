@@ -1,8 +1,9 @@
 ;; Add Package Repository
 ;; Add the MELPA
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Add the MELPA-stable
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ;; Add the Marmalade
 (add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/") t)
 ;; Add the Org
