@@ -264,8 +264,8 @@ esac
 
 # Linuxbrew
 PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
-INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
+MANPATH="$(brew --prefix)/share/man:$MANPATH"
 
 # Emacs alias
 alias e="emacsclient -nw -a ''"
