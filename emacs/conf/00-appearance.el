@@ -4,9 +4,6 @@
 ;; ツールバーの非表示
 (tool-bar-mode 0)
 
-;; スクロールバーの非表示
-(scroll-bar-mode 0)
-
 ;; menu bar の非表示
 (menu-bar-mode 0)
 
@@ -80,3 +77,6 @@
 
 ;; theme
 (load-theme 'monokai t)
+
+;; スクロールバーの非表示
+(scroll-bar-mode 0)
