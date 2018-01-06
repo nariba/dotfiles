@@ -57,3 +57,7 @@
   # grep関連
   gr = grep
   gn = grep -n
+
+[user]
+  email = nariba@users.noreply.github.com
+  name = nariba
