@@ -32,6 +32,7 @@
     flycheck
     flycheck-pos-tip
     flycheck-cask
+    flycheck-rust
     git-commit
     git-gutter
     helm
@@ -58,6 +59,7 @@
     projectile
     quickrun
     redo+
+    rust-mode
     s
     shut-up
     smartparens
