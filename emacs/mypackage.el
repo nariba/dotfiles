@@ -15,6 +15,7 @@
 ;; Packages
 (defvar my/favorite-packages
   '(
+    ace-jump-buffer
     anything
     async
     auto-complete
