@@ -16,7 +16,6 @@
 (defvar my/favorite-packages
   '(
     ace-jump-buffer
-    anything
     async
     auto-complete
     bind-key
@@ -52,14 +51,12 @@
     package-build
     package-utils
     pkg-info
-    point-undo
     popup
     popwin
     pos-tip
     prodigy
     projectile
     quickrun
-    redo+
     rust-mode
     s
     shut-up
@@ -74,6 +71,9 @@
     with-editor
     yascroll
     yasnippet
+;;    anything
+;;    point-undo
+;;    redo+
     ))
 
 ;; Install Packages if not installed
