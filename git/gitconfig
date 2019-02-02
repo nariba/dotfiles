@@ -1,6 +1,6 @@
 [core]
   excludesfile = $HOME/.gitignore_global
-  editor = emacsclient -nw -a ''
+  editor = vim
 
 [include]
   path = $HOME/dotfiles/git/private/gitconfig.local
