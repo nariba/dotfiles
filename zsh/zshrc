@@ -278,7 +278,6 @@ export LC_ALL=en_US.UTF-8
 export TERM=screen-256color
 
 # BUILDBREW settings
-#export HOMEBREW_BUILD_FROM_SOURCE=1
 #export HOMEBREW_MAKE_JOBS=16
 
 ## load user .zshrc configuration file
