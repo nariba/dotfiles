@@ -1,9 +1,9 @@
 [core]
-	excludesfile = /Users/nariba/.gitignore_global
-  editor = emacsclient -nw -a ''
+  excludesfile = $HOME/.gitignore_global
+  editor = vim
 
 [include]
-  path = ~/dotfiles/git/private/gitconfig.local
+  path = $HOME/dotfiles/git/private/gitconfig.local
 
 [alias]
   st = status
@@ -59,13 +59,5 @@
   gn = grep -n
 
 [user]
-	email = nariba@users.noreply.github.com
-	name = nariba
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/nariba/.stCommitMsg
+  email = nariba@users.noreply.github.com
+  name = nariba
