@@ -275,7 +275,7 @@ alias ekill="emacsclient -e '(kill-emacs)'"
 export LC_ALL=en_US.UTF-8
 
 # Term color setting
-export TERM=screen-256color
+#export TERM=screen-256color
 
 # BUILDBREW settings
 #export HOMEBREW_MAKE_JOBS=16
