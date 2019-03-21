@@ -280,6 +280,10 @@ export TERM=screen-256color
 # BUILDBREW settings
 #export HOMEBREW_MAKE_JOBS=16
 
+# lscolors setting
+eval $( dircolors -b $HOME/.dircolors )
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 ## load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
