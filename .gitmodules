@@ -7,3 +7,6 @@
 [submodule "zsh/zplug"]
 	path = zsh/zplug
 	url = https://github.com/zplug/zplug.git
+[submodule "zsh/ls_colors"]
+	path = zsh/ls_colors
+	url = https://github.com/trapd00r/LS_COLORS.git

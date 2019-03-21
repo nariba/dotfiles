@@ -49,3 +49,12 @@ cd ${HOME}
 if [ ! -e ${HOME}/.linuxbrew ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 fi
+
+# deploy lscolors config files
+if [ -e ${HOME}/.dircolors ]; then
+    mv ${HOME}/.dircolors ${HOME}/.dircolors_org
+fi
+ln -s ${HOME}/dotfiles/zsh/ls_colors/LS_COLORS ${HOME}/.dircolors \
+    || echo "Failed to deploy lscolors config files."
+
+
