@@ -44,12 +44,6 @@ ln -s ${HOME}/dotfiles/zsh/zshrc ${HOME}/.zshrc \
     || echo "Failed to deploy zshrc."
 rm -f .zshrc_org
 
-# deploy linuxbrew
-cd ${HOME}
-if [ ! -e ${HOME}/.linuxbrew ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-fi
-
 # deploy lscolors config files
 if [ -e ${HOME}/.dircolors ]; then
     mv ${HOME}/.dircolors ${HOME}/.dircolors_org
