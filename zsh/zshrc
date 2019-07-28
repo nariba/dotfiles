@@ -276,9 +276,6 @@ export LC_ALL=ja_JP.UTF-8
 # Term color setting
 #export TERM=screen-256color
 
-# BUILDBREW settings
-#export HOMEBREW_MAKE_JOBS=16
-
 # lscolors setting
 eval $( dircolors -b $HOME/.dircolors )
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
