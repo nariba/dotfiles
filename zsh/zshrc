@@ -262,10 +262,9 @@ xterm|xterm-color|kterm|kterm-color)
     ;;
 esac
 
-# Linuxbrew
-PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
-INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
-MANPATH="$(brew --prefix)/share/man:$MANPATH"
+# Go language settings (peco)
+export GOPATH=$HOME/local
+export PATH=$GOPATH/bin:$PATH
 
 # Emacs alias
 alias e="emacsclient -nw -a ''"
