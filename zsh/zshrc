@@ -190,6 +190,9 @@ alias su="su -l"
 export GOPATH=$HOME/local
 export PATH=$GOPATH/bin:$PATH
 
+# Cargo settings (dust)
+export PATH=$HOME/.cargo/bin:$PATH
+
 # Emacs alias
 alias e="emacsclient -nw -a ''"
 alias ekill="emacsclient -e '(kill-emacs)'"
