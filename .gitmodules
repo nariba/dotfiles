@@ -10,3 +10,6 @@
 [submodule "zsh/ls_colors"]
 	path = zsh/ls_colors
 	url = https://github.com/trapd00r/LS_COLORS.git
+[submodule "tmux/tpm"]
+	path = tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
