@@ -208,6 +208,59 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias tmuxswitchprefix='tmux set-option -ag prefix C-t'
 alias tmuxrevertprefix='tmux set-option -ag prefix C-q'
 
+# Linuxbrew
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
+
+# z setting
+. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+
+# ghq setting
+export GHQ_ROOT=${HOME}/local
+
+# pecp ghq cd
+function peco-ghq-cd {
+    cd "$( ghq list --full-path | peco)"
+}
+
+# peco cd
+function peco-cd {
+    local sw="1"
+    local lsoption="auto"
+    while [ "$sw" != "0" ]
+    do
+	if [ "$sw" = "1" ]; then
+	    local list=$(echo -e "---$PWD\n../\n$( ls -F --color=$lsoption | grep / )\n---Show hidden directory\n---Show files, $(echo $(ls -F --color=$lsoption | grep -v / ))\n---HOME DIRECTORY")
+	elif [ "$sw" = "2" ]; then
+	    local list=$(echo -e "---$PWD\n$( ls -a -F --color=$lsoption | grep / | sed 1d )\n---Hide hidden directory\n---Show files, $(echo $(ls -F --color=$lsoption | grep -v / ))\n---HOME DIRECTORY")
+	else
+	    local list=$(echo -e "---BACK\n$( ls -F --color=$lsoption | grep -v / )")
+	fi
+
+	local slct=$(echo -e "$list" | peco )
+
+	if [ "$slct" = "---$PWD" ]; then
+	    local sw="0"
+	elif [ "$slct" = "---Hide hidden directory" ]; then
+	    local sw="1"
+	elif [ "$slct" = "---Show hidden directory" ]; then
+	    local sw="2"
+	elif [ "$slct" = "---Show files, $(echo $(ls -F --color=$lsoption | grep -v / ))" ]; then
+	    local sw=$(($sw+2))
+	elif [ "$slct" = "---HOME DIRECTORY" ]; then
+	    cd "$HOME"
+	elif [[ "$slct" =~ / ]]; then
+	    cd "$slct"
+	elif [ "$slct" = "" ]; then
+	    :
+	else
+	    local sw=$(($sw-2))
+	fi
+    done
+}
+alias sd='peco-cd'
+alias gd='peco-ghq-cd'
+
 ## load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
