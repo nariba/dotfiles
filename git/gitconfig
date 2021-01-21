@@ -9,6 +9,8 @@
   st = status
   sh = show
   so = remote show origin
+  sw = switch
+  rs = restore
   ft = fetch
   up = pull --rebase       # pull rebase
   rbm = rebase master      # masterへのrebaseはよく使うのでalias
