@@ -261,6 +261,20 @@ function peco-cd {
 alias sd='peco-cd'
 alias gd='peco-ghq-cd'
 
+# WSL file open
+if uname -r | grep -qo microsoft ;
+then
+    function open(){
+        if [ $# -eq 1 ]; then
+            lfilepath=`readlink -f $1`
+            wfilepath=`wslpath -w $lfilepath`
+            explorer.exe $wfilepath
+        else
+            echo "ERROR"
+        fi
+    }
+fi
+
 ## load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
