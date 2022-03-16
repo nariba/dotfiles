@@ -54,6 +54,8 @@ ln -s ${HOME}/dotfiles/zsh/ls_colors/LS_COLORS ${HOME}/.dircolors \
 # deploy tpm (tmux package manager) config files
 if [ -e ${HOME}/.tmux ]; then
     mv ${HOME}/.tmux ${HOME}/.tmux_org
+    mv ${HOME}/.tmux.conf ${HOME}/.tmux.conf_org
 fi
 mkdir -p ${HOME}/.tmux/plugins
-ln -s ${HOME}/dotfiles/tmux/tpm ${HOME}/.tpm/plugins/tpm
+ln -s ${HOME}/dotfiles/tmux/tpm ${HOME}/.tmux/plugins/tpm
+ln -s ${HOME}/dotfiles/tmux/tmux.conf ${HOME}/.tmux.conf
