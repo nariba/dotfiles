@@ -51,4 +51,9 @@ fi
 ln -s ${HOME}/dotfiles/zsh/ls_colors/LS_COLORS ${HOME}/.dircolors \
     || echo "Failed to deploy lscolors config files."
 
-
+# deploy tpm (tmux package manager) config files
+if [ -e ${HOME}/.tmux ]; then
+    mv ${HOME}/.tmux ${HOME}/.tmux_org
+fi
+mkdir -p ${HOME}/.tmux/plugins
+ln -s ${HOME}/dotfiles/tmux/tpm ${HOME}/.tpm/plugins/tpm
