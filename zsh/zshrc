@@ -209,7 +209,7 @@ alias tmuxswitchprefix='tmux set-option -ag prefix C-t'
 alias tmuxrevertprefix='tmux set-option -ag prefix C-q'
 
 # Linuxbrew
-export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
 
 # z setting
