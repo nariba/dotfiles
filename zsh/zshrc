@@ -216,6 +216,10 @@ export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
 if [ -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh ];
 then
     . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+elif [ -f /usr/share/z/z.sh ]
+then
+    # z package installed by pacman (Archlinux).
+    . /usr/share/z/z.sh
 fi
 
 # ghq setting
