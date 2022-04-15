@@ -213,7 +213,14 @@ export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
 
 # z setting
-. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+if [ -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh ]
+then
+    . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+elif [ -f /usr/share/z/z.sh ]
+then
+    # z package installed by pacman (Archlinux).
+    . /usr/share/z/z.sh
+fi
 
 # ghq setting
 export GHQ_ROOT=${HOME}/local
