@@ -223,7 +223,7 @@ then
 fi
 
 # ghq setting
-export GHQ_ROOT=${HOME}/local
+export GHQ_ROOT=${HOME}/src
 
 # pecp ghq cd
 function peco-ghq-cd {
