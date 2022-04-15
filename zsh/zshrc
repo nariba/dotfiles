@@ -213,7 +213,7 @@ export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
 
 # z setting
-if [ -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh ];
+if [ -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh ]
 then
     . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 elif [ -f /usr/share/z/z.sh ]
