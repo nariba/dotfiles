@@ -225,6 +225,9 @@ fi
 # ghq setting
 export GHQ_ROOT=${HOME}/src
 
+# less option
+export LESS="-g -i -M -R -w -X -z-4"
+
 # pecp ghq cd
 function peco-ghq-cd {
     cd "$( ghq list --full-path | peco)"
