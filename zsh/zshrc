@@ -140,10 +140,17 @@ bindkey "\e[Z" reverse-menu-complete
 HISTFILE=${HOME}/.zsh_history
 setopt share_history        # share command history data
 
+# Linuxbrew
+export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
 
 ## Completion configuration
 #
 fpath=(${HOME}/.zsh/functions/Completion ${fpath})
+# whether brew command is exist or not
+if type brew &> /dev/null; then
+    fpath=($(brew --prefix)/share/zsh-completions $fpath)
+fi
 autoload -U compinit
 compinit
 
@@ -207,10 +214,6 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # tmux on tmux
 alias tmuxswitchprefix='tmux set-option -ag prefix C-t'
 alias tmuxrevertprefix='tmux set-option -ag prefix C-q'
-
-# Linuxbrew
-export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
-export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
 
 # z setting
 if [ -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh ]
