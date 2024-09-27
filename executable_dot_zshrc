@@ -1,0 +1,299 @@
+#!/usr/bin/zsh
+
+# To use zplug
+source ${HOME}/.zplug/init.zsh
+
+# プラグインを定義
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/zsh-completions'
+zplug 'sorin-ionescu/prezto'
+zplug 'greymd/tmux-xpanes'
+zplug 'zsh-users/zsh-history-substring-search'
+zplug 'b4b4r07/enhancd'
+
+# インストール
+if ! zplug check --verbose; then
+  printf 'Install? [y/N]: '
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+zplug load --verbose
+
+
+# To use zsh-completions
+fpath=($HOME/.zplug/repos/zsh-users/zsh-completions/src $fpath)
+
+# To use peco history search
+peco-select-history() {
+    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+    CURSOR=${#BUFFER}
+    zle reset-prompt
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+# History
+# 履歴の件数
+export HISTSIZE=1000000
+
+# 履歴の保存件数
+export SAVEHIST=1000000
+
+# 重複した場合の記録を行わない
+setopt hist_ignore_dups
+
+# 開始と終了を記録
+setopt EXTENDED_HISTORY
+
+# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
+setopt hist_ignore_all_dups
+
+# スペースで始まるコマンド行はヒストリリストから削除
+setopt hist_ignore_space
+
+# ヒストリを呼び出してから実行する間に一旦編集可能
+setopt hist_verify
+
+# 余分な空白は詰めて記録
+setopt hist_reduce_blanks
+
+# 古いコマンドと同じものは無視
+setopt hist_save_no_dups
+
+# historyコマンドは履歴に登録しない
+setopt hist_no_store
+
+# 補完時にヒストリを自動的に展開
+setopt hist_expand
+
+# 履歴をインクリメンタルに追加
+setopt inc_append_history
+
+
+## Environment variable configuration
+#
+# LANG
+#
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
+case ${UID} in
+0)
+    LANG=C
+    ;;
+esac
+
+# auto change directory
+#
+setopt auto_cd
+
+# auto directory pushd that you can get dirs list by cd -[tab]
+#
+setopt auto_pushd
+
+# command correct edition before each completion attempt
+#
+setopt correct
+
+# compacked complete list display
+#
+setopt list_packed
+
+# no remove postfix slash of command line
+#
+setopt noautoremoveslash
+
+# no beep sound when complete list displayed
+#
+setopt nolistbeep
+
+
+## Keybind configuration
+#
+# emacs like keybind (e.x. Ctrl-a gets to line head and Ctrl-e gets
+#   to end) and something additions
+#
+bindkey -e
+bindkey "^[[1~" beginning-of-line # Home gets to line head
+bindkey "^[[4~" end-of-line # End gets to line end
+bindkey "^[[3~" delete-char # Del
+
+# historical backward/forward search with linehead string binded to ^P/^N
+#
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+bindkey "\\ep" history-beginning-search-backward-end
+bindkey "\\en" history-beginning-search-forward-end
+
+# reverse menu completion binded to Shift-Tab
+#
+bindkey "\e[Z" reverse-menu-complete
+
+
+## Command history configuration
+#
+HISTFILE=${HOME}/.zsh_history
+setopt share_history        # share command history data
+
+# Linuxbrew
+export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+export MANPATH=/home/linuxbrew/.linuxbrew/man:$MANPATH
+
+## Completion configuration
+#
+fpath=(${HOME}/.zsh/functions/Completion ${fpath})
+# whether brew command is exist or not
+if type brew &> /dev/null; then
+    fpath=($(brew --prefix)/share/zsh-completions $fpath)
+fi
+autoload -U compinit
+compinit
+
+
+## zsh editor
+#
+autoload zed
+
+
+## Prediction configuration
+#
+#autoload predict-on
+#predict-off
+
+
+## Alias configuration
+#
+# expand aliases before completing
+#
+setopt complete_aliases     # aliased ls needs if file/dir completions work
+
+alias where="command -v"
+alias j="jobs -l"
+
+case "${OSTYPE}" in
+freebsd*|darwin*)
+    alias ls="ls -G -w"
+    ;;
+linux*)
+    alias ls="ls --color"
+    ;;
+esac
+
+alias la="ls -a"
+alias lf="ls -F"
+alias ll="ls -l"
+
+alias du="du -h"
+alias df="df -h"
+
+alias su="su -l"
+
+# Go language settings (peco)
+export GOPATH=$HOME/local
+export PATH=$GOPATH/bin:$PATH
+
+# Cargo settings (dust)
+export PATH=$HOME/.cargo/bin:$PATH
+
+# Emacs alias
+alias e="emacsclient -nw -a ''"
+alias ekill="emacsclient -e '(kill-emacs)'"
+
+# Term color setting
+export TERM=xterm-256color
+
+# lscolors setting
+eval $( dircolors -b $HOME/.dircolors )
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# tmux on tmux
+alias tmuxswitchprefix='tmux set-option -ag prefix C-t'
+alias tmuxrevertprefix='tmux set-option -ag prefix C-q'
+
+# z setting
+if [ -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh ]
+then
+    . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+elif [ -f /usr/share/z/z.sh ]
+then
+    # z package installed by pacman (Archlinux).
+    . /usr/share/z/z.sh
+fi
+
+# ghq setting
+export GHQ_ROOT=${HOME}/src
+
+# less option
+export LESS="-g -i -M -R -w -X -z-4"
+
+# pecp ghq cd
+function peco-ghq-cd {
+    cd "$( ghq list --full-path | peco)"
+}
+
+# peco cd
+function peco-cd {
+    local sw="1"
+    local lsoption="auto"
+    while [ "$sw" != "0" ]
+    do
+	if [ "$sw" = "1" ]; then
+	    local list=$(echo -e "---$PWD\n../\n$( ls -F --color=$lsoption | grep / )\n---Show hidden directory\n---Show files, $(echo $(ls -F --color=$lsoption | grep -v / ))\n---HOME DIRECTORY")
+	elif [ "$sw" = "2" ]; then
+	    local list=$(echo -e "---$PWD\n$( ls -a -F --color=$lsoption | grep / | sed 1d )\n---Hide hidden directory\n---Show files, $(echo $(ls -F --color=$lsoption | grep -v / ))\n---HOME DIRECTORY")
+	else
+	    local list=$(echo -e "---BACK\n$( ls -F --color=$lsoption | grep -v / )")
+	fi
+
+	local slct=$(echo -e "$list" | peco )
+
+	if [ "$slct" = "---$PWD" ]; then
+	    local sw="0"
+	elif [ "$slct" = "---Hide hidden directory" ]; then
+	    local sw="1"
+	elif [ "$slct" = "---Show hidden directory" ]; then
+	    local sw="2"
+	elif [ "$slct" = "---Show files, $(echo $(ls -F --color=$lsoption | grep -v / ))" ]; then
+	    local sw=$(($sw+2))
+	elif [ "$slct" = "---HOME DIRECTORY" ]; then
+	    cd "$HOME"
+	elif [[ "$slct" =~ / ]]; then
+	    cd "$slct"
+	elif [ "$slct" = "" ]; then
+	    :
+	else
+	    local sw=$(($sw-2))
+	fi
+    done
+}
+alias sd='peco-cd'
+alias gd='peco-ghq-cd'
+
+# WSL file open
+if uname -r | grep -qo microsoft ;
+then
+    function open(){
+        if [ $# -eq 1 ]; then
+            lfilepath=`readlink -f $1`
+            wfilepath=`wslpath -w $lfilepath`
+            explorer.exe $wfilepath
+        else
+            echo "ERROR"
+        fi
+    }
+fi
+
+# rbenv
+if type rbenv > /dev/null;
+then
+    eval "$(rbenv init - zsh)"
+fi
+
+## load user .zshrc configuration file
+#
+[ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
