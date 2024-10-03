@@ -3,7 +3,7 @@
     url = "git@github.com:tmux-plugins/tpm.git"
     refreshPeriod = "168h"
 
-[".dircolor"]
+[".dircolors"]
     type = "file"
     url = "https://raw.githubusercontent.com/trapd00r/LS_COLORS/refs/heads/master/LS_COLORS"
     refreshPeriod = "168h"
