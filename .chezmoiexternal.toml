@@ -2,3 +2,8 @@
     type = "git-repo"
     url = "git@github.com:tmux-plugins/tpm.git"
     refreshPeriod = "168h"
+
+[".dircolor"]
+    type = "git-repo"
+    url = "git@github.com:trapd00r/LS_COLORS"
+    refreshPeriod = "168h"
