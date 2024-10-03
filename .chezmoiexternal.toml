@@ -12,3 +12,8 @@
     type = "git-repo"
     url = "git@github.com:zplug/zplug.git"
     refreshPeriod = "168h"
+
+[".zprezto"]
+    type = "git-repo"
+    url = "git@github.com:sorin-ionescu/prezto.git"
+    refreshPeriod = "168h"
