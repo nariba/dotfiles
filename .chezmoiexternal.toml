@@ -7,3 +7,8 @@
     type = "file"
     url = "https://raw.githubusercontent.com/trapd00r/LS_COLORS/refs/heads/master/LS_COLORS"
     refreshPeriod = "168h"
+
+[".zplug"]
+    type = "git-repo"
+    url = "git@github.com:zplug/zplug.git"
+    refreshPeriod = "168h"
