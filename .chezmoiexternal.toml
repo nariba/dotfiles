@@ -4,6 +4,6 @@
     refreshPeriod = "168h"
 
 [".dircolor"]
-    type = "git-repo"
-    url = "git@github.com:trapd00r/LS_COLORS"
+    type = "file"
+    url = "https://raw.githubusercontent.com/trapd00r/LS_COLORS/refs/heads/master/LS_COLORS"
     refreshPeriod = "168h"
