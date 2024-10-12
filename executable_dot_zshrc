@@ -180,7 +180,7 @@ freebsd*|darwin*)
     alias ls="ls -G -w"
     ;;
 linux*)
-    alias ls="ls --color"
+    alias ls="ls -F --color"
     ;;
 esac
 
