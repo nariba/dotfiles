@@ -63,3 +63,9 @@
 [user]
   email = nariba@users.noreply.github.com
   name = nariba
+
+[init]
+  defaultBranch = main
+
+[pull]
+  ff = only
