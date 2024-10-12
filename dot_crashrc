@@ -1,0 +1,4 @@
+set scroll off
+set edit emacs
+
+extend $HOME/local/lib/mpykdump.so
