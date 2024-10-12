@@ -3,7 +3,7 @@
     editor = vim
 
 [include]
-    path = $HOME/dotfiles/git/private/gitconfig.local
+    path = $HOME/.gitconfig.local
 
 [alias]
     st = status
