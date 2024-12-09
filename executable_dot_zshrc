@@ -294,6 +294,9 @@ then
     eval "$(rbenv init - zsh)"
 fi
 
+# rye setting
+source $HOME/.rye/env
+
 ## load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
