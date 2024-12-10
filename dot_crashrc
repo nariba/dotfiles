@@ -1,4 +1,17 @@
 set scroll off
 set edit emacs
 
-extend $HOME/local/lib/mpykdump.so
+extend /home/nariba/local/lib/mpykdump.so
+
+mod -S
+
+dmesg > dmesg.log
+foreach UN ps -m > foreach_UN_ps_-m.log
+foreach UN bt > foreach_UN_bt.log
+crashinfo > crashinfo.log
+hanginfo > hanginfo.log
+taskinfo --ns > taskinfo_--ns.log
+mount > mount.log
+kmem -s > kmem_-s.log
+mod -t > mod_-t.log
+sys > sys.log
