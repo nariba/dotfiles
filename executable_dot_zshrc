@@ -297,6 +297,12 @@ fi
 # rye setting
 source $HOME/.rye/env
 
+# pip setting
+if [ -d $HOME/.local/bin ];
+then
+    export PATH=$HOME/.local/bin:$PATH
+fi
+
 ## load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
